@@ -1,0 +1,97 @@
+<project>
+ <properties winrt_org="GiderosMobile" html5_fbinstant="0" splash_v_image="" html5_host="" windowWidth="0" windowHeight="0" app_icon="" win_org="GiderosMobile" html5_pack="0" vsync="0" disableSplash="0" logicalHeight="1280" winrt_package="com.yourdomain.yourapp" mouseTouchOrder="0" html5_fbload="100" osx_signingId="" android_template="0" osx_domain="giderosmobile.com" backgroundColor="#ffffff" encryptCode="0" fps="60" touchToMouse="1" orientation="1" logicalWidth="720" architecture="0" iosDevice="0" splash_h_image="" version="1.0" html5_mem="256" retinaDisplay="0" version_code="1" app_name="" autorotation="0" osx_category="5" osx_org="GiderosMobile" ios_bundle="com.yourdomain." build_number="1" osx_bundle="com.yourdomain." win_domain="giderosmobile.com" packageName="com.yourdomain.yourapp" encryptAssets="0" scaleMode="3" osx_installerId="" exportMode="0" splashScaleMode="0" tv_icon="" mouseToTouch="1">
+  <imageScales/>
+  <plugins>
+   <plugin enabled="1" name="Bump"/>
+  </plugins>
+  <exports/>
+ </properties>
+ <folder name="data">
+  <file excludeFromExecution="1" source="data/gunsPresets.lua"/>
+  <file source="data/cour.ttf"/>
+ </folder>
+ <folder name="addons">
+  <file source="addons/Monitor.lua"/>
+  <file source="addons/Console.lua"/>
+ </folder>
+ <folder name="gfx">
+  <file source="gfx/player2.png"/>
+  <folder name="items">
+   <file source="gfx/superPowers/item/medikit.png"/>
+   <file source="gfx/superPowers/item/grenade-pack.png"/>
+   <file source="gfx/superPowers/item/grenade.png"/>
+   <file source="gfx/superPowers/item/barril.png"/>
+   <file source="gfx/superPowers/item/ammo-pack.png"/>
+  </folder>
+  <folder name="gun_projectiles">
+   <file source="gfx/superPowers/weapons/shoot/Bomb.png"/>
+   <file source="gfx/superPowers/weapons/shoot/12.png"/>
+   <file source="gfx/superPowers/weapons/shoot/11.png"/>
+   <file source="gfx/superPowers/weapons/shoot/10.png"/>
+   <file source="gfx/superPowers/weapons/shoot/9.png"/>
+   <file source="gfx/superPowers/weapons/shoot/8.png"/>
+   <file source="gfx/superPowers/weapons/shoot/7.png"/>
+   <file source="gfx/superPowers/weapons/shoot/6.png"/>
+   <file source="gfx/superPowers/weapons/shoot/5.png"/>
+   <file source="gfx/superPowers/weapons/shoot/4.png"/>
+   <file source="gfx/superPowers/weapons/shoot/3.png"/>
+   <file source="gfx/superPowers/weapons/shoot/2.png"/>
+   <file source="gfx/superPowers/weapons/shoot/1.png"/>
+  </folder>
+  <folder name="guns">
+   <file source="gfx/superPowers/weapons/11.png"/>
+   <file source="gfx/superPowers/weapons/10.png"/>
+   <file source="gfx/superPowers/weapons/9.png"/>
+   <file source="gfx/superPowers/weapons/8.png"/>
+   <file source="gfx/superPowers/weapons/7.png"/>
+   <file source="gfx/superPowers/weapons/6.png"/>
+   <file source="gfx/superPowers/weapons/5.png"/>
+   <file source="gfx/superPowers/weapons/4.png"/>
+   <file source="gfx/superPowers/weapons/3.png"/>
+   <file source="gfx/superPowers/weapons/2.png"/>
+   <file source="gfx/superPowers/weapons/1.png"/>
+  </folder>
+  <file source="gfx/player.png"/>
+  <file source="gfx/floor.png"/>
+ </folder>
+ <folder name="Components">
+  <file source="Components/cBase.lua"/>
+  <file source="Components/cValueBar.lua"/>
+  <file source="Components/cGun.lua"/>
+  <file source="Components/cDrawable.lua"/>
+  <file source="Components/cBody.lua"/>
+ </folder>
+ <folder name="Scenes">
+  <file excludeFromExecution="1" source="Scenes/GameScene.lua"/>
+ </folder>
+ <folder name="Entities">
+  <file source="Entities/eWall.lua"/>
+  <file source="Entities/ePlayer.lua"/>
+  <file source="Entities/eGun.lua"/>
+  <file source="Entities/eBullet.lua"/>
+  <file source="Entities/eBase.lua"/>
+  <file source="Entities/eAmmo.lua"/>
+ </folder>
+ <folder name="Systems">
+  <file source="Systems/updateSystem.lua"/>
+  <file source="Systems/staticPhysicsBodies.lua"/>
+  <file source="Systems/playerControlSystem.lua"/>
+  <file source="Systems/movementSystem.lua"/>
+  <file source="Systems/gunSystem.lua"/>
+  <file source="Systems/drawableSystem.lua"/>
+  <file source="Systems/debugDrawSystem.lua"/>
+  <file source="Systems/bumpPhysicsSystem.lua"/>
+ </folder>
+ <folder name="Libs">
+  <file source="Libs/Vec2.lua"/>
+  <file source="Libs/tiny-ecs.lua"/>
+  <file source="Libs/scenemanager.lua"/>
+  <file source="Libs/Layer.lua"/>
+  <file source="Libs/gtween.lua"/>
+  <file source="Libs/easing.lua"/>
+  <file source="Libs/Camera.lua"/>
+ </folder>
+ <file source="utils.lua"/>
+ <file source="init.lua"/>
+ <file source="main.lua"/>
+</project>

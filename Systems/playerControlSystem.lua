@@ -58,7 +58,7 @@ function PlayerControlSystem:process(ent, dt)
 		local d = self.player.drawable
 		if (d) then d:setRotation(self.player.rotation) end
 	end
-	DM:setText("Dir", self.player.watchingDir:toString())
+	DM:setText("Dir", self.player.watchingDir)
 end
 
 function PlayerControlSystem:keyUp(e)

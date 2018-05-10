@@ -16,7 +16,12 @@ end
 function PlayerControlSystem:process(ent, dt)
 	
 	-- cam movement
-	camera:setPosition(self.player.pos:unpack())
+	--camera:setPosition(self.player.pos:unpack()) -- old
+	local x, y = camera:getPosition()
+	local sx, sy = self.player.pos:unpack()
+	x = lerp(x, sx, 0.07)
+	y = lerp(y, sy, 0.07)
+	camera:setPosition(x, y)
 	
 	-- update ui
 	if (self.player.hasGun) then

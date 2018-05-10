@@ -22,12 +22,10 @@ function CBody:setFriction(value)
 	self.friction = value
 end
 
-function CBody:applyForce(vec, len)
-	len = len or 1
-	self.vel:add(vec):limit(len)
+function CBody:applyForce(vec)
+	self.vel:add(vec)
 end
 
-function CBody:applyForceXY(fx, fy, len)
-	len = len or 1
-	self.vel:addXY(fx, fy):limit(len)
+function CBody:applyForceXY(fx, fy)
+	self.vel:addXY(fx, fy)
 end

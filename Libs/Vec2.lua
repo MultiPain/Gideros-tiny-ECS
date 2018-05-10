@@ -59,4 +59,4 @@ function Vec2:random(maxLen)
 	self.y = random(maxLen)
 	return self 
 end
-function Vec2:toString() return string.format("[%.2f, %.2f]", self.x, self.y) end
+function Vec2:__tostring() return string.format("[%.2f, %.2f]", self.x, self.y) end

@@ -102,8 +102,8 @@ function Camera:move(dx, dy) self:setPosition(self.x + dx, self.y + dy) end
 function Camera:focus(sprite) self:setPosition(sprite:getPosition()) end
 
 function Camera:toWorld(x, y)
-	x = (x + (self.x - self.hw)) / self.scale
-	y = (y + (self.y - self.hh)) / self.scale	
+	x = (x + (self.x * self.scale - self.hw)) / self.scale
+	y = (y + (self.y * self.scale - self.hh)) / self.scale	
 	return x, y
 end
 -- TODO
@@ -112,31 +112,31 @@ function Camera:toScreen(x,y)
 end
 --
 function Camera:setX(x) 
-	x *= self.scale
-	x = self.haveBounds and clamp(x, self.bounds.x, self.bounds.x + self.bounds.w) or x
+	local sx = x * self.scale
+	sx = self.haveBounds and clamp(sx, self.bounds.x, self.bounds.x + self.bounds.w) or x
 	self.x = x
-	Sprite.setX(self, self.hw - x)
+	Sprite.setX(self, self.hw - sx)
 end
 --
 function Camera:setY(y) 
-	y *= self.scale
-	y = self.haveBounds and clamp(y, self.bounds.y, self.bounds.y + self.bounds.h) or y
+	local sy = y * self.scale
+	sy = self.haveBounds and clamp(sy, self.bounds.y, self.bounds.y + self.bounds.h) or y
 	self.y = y
-	Sprite.setY(self, self.hh - y)
+	Sprite.setY(self, self.hh - sy)
 end
 -- set camera CENTER
 
 function Camera:setPosition(x, y) 
-	x *= self.scale
-	y *= self.scale
+	local sx = x * self.scale
+	local sy = y * self.scale
 	if (self.haveBounds) then 
-		x = clamp(x, self.bounds.x, self.bounds.x + self.bounds.w ) 
-		y = clamp(y, self.bounds.y, self.bounds.y + self.bounds.h ) 
+		sx = clamp(sx, self.bounds.x, self.bounds.x + self.bounds.w ) 
+		sy = clamp(sy, self.bounds.y, self.bounds.y + self.bounds.h ) 
 	end
 	self.x = x
 	self.y = y
 	
-	Sprite.setPosition(self, self.hw - x, self.hh - y)
+	Sprite.setPosition(self, self.hw - sx, self.hh - sy)
 end
 --
 function Camera:getPosition() return self.x, self.y end
@@ -174,7 +174,7 @@ function Camera:setLayerParalax(name, paralax) self:getLayer(name):setParalax(pa
 	
 function Camera:moveLayer(name, dx, dy) self:getLayer(name):move(dx, dy) end
 
-function Camera:setLayerVisible(flag) self:getLayer(name):setVisible(flag) end
+function Camera:setLayerVisible(name, flag) self:getLayer(name):setVisible(flag) end
 
 function Camera:getLayerParalax(name) return self:getLayer(name).paralax end
 
